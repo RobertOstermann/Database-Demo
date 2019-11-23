@@ -1,0 +1,159 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+//Needed using statements
+using System.Data.SqlClient;
+
+
+namespace DatabaseDemo
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        //Connect to the database.
+        private SqlConnection cnn;
+
+        /// <summary>
+        /// Connect to the database.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void Connect(object sender, EventArgs args)
+        {
+            string connectionString;
+            connectionString = @"Data Source=mssql.cs.ksu.edu; Initial Catalog=Robbieo; User ID=Robbieo; Password=Vrt0b!l247spirit";
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            MessageBox.Show("Connection Open");
+        }
+        /// <summary>
+        /// Read the database.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void Read(object sender, EventArgs args)
+        {
+            if (cnn.State == System.Data.ConnectionState.Open)
+            {
+                SqlCommand command;
+                SqlDataReader dataReader;
+                String sql, Output = "";
+                sql = "SELECT * FROM Clubs.Club";
+                command = new SqlCommand(sql, cnn);
+                dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    Output = Output + dataReader.GetValue(0) + " - " + dataReader.GetValue(1) + " - " + dataReader.GetValue(2) + "\n";
+                }
+                MessageBox.Show(Output);
+
+                dataReader.Close();
+                command.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Open Connection First");
+            }
+        }
+        /// <summary>
+        /// Insert into the database.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void Insert(object sender, EventArgs args)
+        {
+            if (cnn.State == System.Data.ConnectionState.Open)
+            {
+                SqlCommand command;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                String sql;
+                sql = "INSERT INTO Clubs.Club(Name, Purpose) VALUES('Demo', 'The Demo is Inserting Correctly')";
+                command = new SqlCommand(sql, cnn);
+                adapter.InsertCommand = new SqlCommand(sql, cnn);
+                adapter.InsertCommand.ExecuteNonQuery();
+                MessageBox.Show(sql);
+                command.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Open Connection First");
+            }
+        }
+        /// <summary>
+        /// Insert into the database.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void Update(object sender, EventArgs args)
+        {
+            if (cnn.State == System.Data.ConnectionState.Open)
+            {
+                SqlCommand command;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                String sql;
+                sql = "UPDATE Clubs.Club SET Purpose = N'The Demo is updating correctly' WHERE Club.ClubId = 3 AND Purpose != N'The Demo is updating correctly'";
+                command = new SqlCommand(sql, cnn);
+                adapter.UpdateCommand = new SqlCommand(sql, cnn);
+                adapter.UpdateCommand.ExecuteNonQuery();
+                MessageBox.Show(sql);
+                command.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Open Connection First");
+            }
+        }
+        /// <summary>
+        /// Insert into the database.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void Delete(object sender, EventArgs args)
+        {
+            if (cnn.State == System.Data.ConnectionState.Open)
+            {
+                SqlCommand command;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                String sql;
+                sql = "DELETE Clubs.Club WHERE Club.ClubId = 3";
+                command = new SqlCommand(sql, cnn);
+                adapter.DeleteCommand = new SqlCommand(sql, cnn);
+                adapter.DeleteCommand.ExecuteNonQuery();
+                MessageBox.Show(sql);
+                command.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Open Connection First");
+            }
+        }
+        /// <summary>
+        /// Read the database.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void Close(object sender, EventArgs args)
+        {
+            cnn.Close();
+            MessageBox.Show("Connection Closed");
+        }
+    }
+}
