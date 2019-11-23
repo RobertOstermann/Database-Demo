@@ -12,3 +12,17 @@ C:\Users\Robbert\Desktop\C# Programming\DatabaseDemo\DatabaseDemo\obj\Debug\Data
 C:\Users\Robbert\Desktop\C# Programming\DatabaseDemo\DatabaseDemo\obj\Debug\DatabaseDemo.csproj.GenerateResource.cache
 C:\Users\Robbert\Desktop\C# Programming\DatabaseDemo\DatabaseDemo\obj\Debug\DatabaseDemo.exe
 C:\Users\Robbert\Desktop\C# Programming\DatabaseDemo\DatabaseDemo\obj\Debug\DatabaseDemo.pdb
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\bin\Debug\DatabaseDemo.exe.config
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\bin\Debug\DatabaseDemo.exe
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\bin\Debug\DatabaseDemo.pdb
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\DatabaseDemo.csprojAssemblyReference.cache
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\MainWindow.g.cs
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\App.g.cs
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\DatabaseDemo_MarkupCompile.cache
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\DatabaseDemo_MarkupCompile.lref
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\MainWindow.baml
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\DatabaseDemo.g.resources
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\DatabaseDemo.Properties.Resources.resources
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\DatabaseDemo.csproj.GenerateResource.cache
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\DatabaseDemo.exe
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\DatabaseDemo.pdb
