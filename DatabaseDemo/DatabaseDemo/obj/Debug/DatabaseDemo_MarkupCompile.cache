@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\App.xaml
-11151548125
+4-1633171854
 
-5-2017746502
+8-1580543265
 13-1505183044
-MainWindow.xaml;
+DemoControlBinding.xaml;DemoMessageBox.xaml;DemoSelection.xaml;MainWindow.xaml;
 
-False
+True
 

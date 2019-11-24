@@ -26,3 +26,7 @@ C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\
 C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\DatabaseDemo.csproj.GenerateResource.cache
 C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\DatabaseDemo.exe
 C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\DatabaseDemo.pdb
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\DemoMessageBox.g.cs
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\DemoMessageBox.baml
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\DemoSelection.g.cs
+C:\Users\Robbert\Source\Repos\Database-Demo\DatabaseDemo\DatabaseDemo\obj\Debug\DemoSelection.baml

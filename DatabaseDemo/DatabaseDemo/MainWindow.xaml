@@ -6,34 +6,6 @@
         xmlns:local="clr-namespace:DatabaseDemo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Button Grid.Row="0" Grid.ColumnSpan="2" FontSize="48" Margin="10" Click="Connect">
-            Connect
-        </Button>
-        <Button Grid.Row="1" FontSize="48" Margin="10" Click="Read">
-            Read
-        </Button>
-        <Button Grid.Row="1" Grid.Column="1" FontSize="48" Margin="10" Click="Insert">
-            Insert
-        </Button>
-        <Button Grid.Row="2" FontSize="48" Margin="10" Click="Update">
-            Update
-        </Button>
-        <Button Grid.Row="2" Grid.Column="1" FontSize="48" Margin="10" Click="Delete">
-            Delete
-        </Button>
-        <Button Grid.Row="3" Grid.ColumnSpan="2" FontSize="48" Margin="10" Click="Close">
-            Close
-        </Button>
-    </Grid>
+    <Frame Source="DemoSelection.xaml" BorderBrush="Black" 
+               Name="Interface" LoadCompleted="OnLoadCompleted" DataContextChanged="OnDataContextChanged"/>
 </Window>
