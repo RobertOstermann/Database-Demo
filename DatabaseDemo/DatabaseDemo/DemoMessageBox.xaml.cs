@@ -38,7 +38,7 @@ namespace DatabaseDemo
         private void Connect(object sender, EventArgs args)
         {
             string connectionString;
-            connectionString = @"Data Source=mssql.cs.ksu.edu; Initial Catalog=Robbieo; User ID=Robbieo; Password=Vrt0b!l247spirit";
+            connectionString = "Data Source=mssql.cs.ksu.edu; Initial Catalog=Robbieo; User ID=Robbieo; Password=Vrt0b!l247sp";
             cnn = new SqlConnection(connectionString);
             cnn.Open();
             MessageBox.Show("Connection Open");
@@ -55,7 +55,7 @@ namespace DatabaseDemo
                 SqlCommand command;
                 SqlDataReader dataReader;
                 String sql, Output = "";
-                sql = "SELECT * FROM Clubs.Club";
+                sql = "SELECT * FROM Clubs.Club"; 
                 command = new SqlCommand(sql, cnn);
                 dataReader = command.ExecuteReader();
                 while (dataReader.Read())
