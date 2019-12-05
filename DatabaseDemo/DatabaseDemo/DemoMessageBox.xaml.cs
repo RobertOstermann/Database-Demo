@@ -28,7 +28,7 @@ namespace DatabaseDemo
         }
 
         //Connect to the database.
-        private SqlConnection cnn;
+        private SqlConnection connection;
 
         /// <summary>
         /// Connect to the database.
@@ -38,9 +38,9 @@ namespace DatabaseDemo
         private void Connect(object sender, EventArgs args)
         {
             string connectionString;
-            connectionString = "Data Source=mssql.cs.ksu.edu; Initial Catalog=Robbieo; User ID=Robbieo; Password=Vrt0b!l247sp";
-            cnn = new SqlConnection(connectionString);
-            cnn.Open();
+            connectionString = "Data Source=mssql.cs.ksu.edu; Initial Catalog=Robbieo; User ID=Robbieo; Password=Database!";
+            connection = new SqlConnection(connectionString);
+            connection.Open();
             MessageBox.Show("Connection Open");
         }
         /// <summary>
@@ -50,13 +50,13 @@ namespace DatabaseDemo
         /// <param name="args"></param>
         private void Read(object sender, EventArgs args)
         {
-            if (cnn.State == System.Data.ConnectionState.Open)
+            if (connection.State == System.Data.ConnectionState.Open)
             {
                 SqlCommand command;
                 SqlDataReader dataReader;
                 String sql, Output = "";
                 sql = "SELECT * FROM Clubs.Club"; 
-                command = new SqlCommand(sql, cnn);
+                command = new SqlCommand(sql, connection);
                 dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
@@ -79,14 +79,14 @@ namespace DatabaseDemo
         /// <param name="args"></param>
         private void Insert(object sender, EventArgs args)
         {
-            if (cnn.State == System.Data.ConnectionState.Open)
+            if (connection.State == System.Data.ConnectionState.Open)
             {
                 SqlCommand command;
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 String sql;
                 sql = "INSERT INTO Clubs.Club(Name, Purpose) VALUES('Demo', 'The Demo is Inserting Correctly')";
-                command = new SqlCommand(sql, cnn);
-                adapter.InsertCommand = new SqlCommand(sql, cnn);
+                command = new SqlCommand(sql, connection);
+                adapter.InsertCommand = new SqlCommand(sql, connection);
                 adapter.InsertCommand.ExecuteNonQuery();
                 MessageBox.Show(sql);
                 command.Dispose();
@@ -103,14 +103,14 @@ namespace DatabaseDemo
         /// <param name="args"></param>
         private void Update(object sender, EventArgs args)
         {
-            if (cnn.State == System.Data.ConnectionState.Open)
+            if (connection.State == System.Data.ConnectionState.Open)
             {
                 SqlCommand command;
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 String sql;
                 sql = "UPDATE Clubs.Club SET Purpose = N'The Demo is updating correctly' WHERE Club.ClubId = 3 AND Purpose != N'The Demo is updating correctly'";
-                command = new SqlCommand(sql, cnn);
-                adapter.UpdateCommand = new SqlCommand(sql, cnn);
+                command = new SqlCommand(sql, connection);
+                adapter.UpdateCommand = new SqlCommand(sql, connection);
                 adapter.UpdateCommand.ExecuteNonQuery();
                 MessageBox.Show(sql);
                 command.Dispose();
@@ -127,14 +127,14 @@ namespace DatabaseDemo
         /// <param name="args"></param>
         private void Delete(object sender, EventArgs args)
         {
-            if (cnn.State == System.Data.ConnectionState.Open)
+            if (connection.State == System.Data.ConnectionState.Open)
             {
                 SqlCommand command;
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 String sql;
                 sql = "DELETE Clubs.Club WHERE Club.ClubId = 3";
-                command = new SqlCommand(sql, cnn);
-                adapter.DeleteCommand = new SqlCommand(sql, cnn);
+                command = new SqlCommand(sql, connection);
+                adapter.DeleteCommand = new SqlCommand(sql, connection);
                 adapter.DeleteCommand.ExecuteNonQuery();
                 MessageBox.Show(sql);
                 command.Dispose();
@@ -151,7 +151,7 @@ namespace DatabaseDemo
         /// <param name="args"></param>
         private void Close(object sender, EventArgs args)
         {
-            cnn.Close();
+            connection.Close();
             MessageBox.Show("Connection Closed");
         }
     }
